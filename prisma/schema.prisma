@@ -9,6 +9,10 @@ generator client {
   output   = "../src/generated/prisma"
 }
 
+/// Specifies the database connection for the Prisma Client.
+/// The `datasource` block is used to configure the connection to your database.
+/// Replace `db` with the name of your datasource if needed.
+/// Typically, you define the provider (e.g., PostgreSQL, MySQL, SQLite) and the connection URL here.
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
