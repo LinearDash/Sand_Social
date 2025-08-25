@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 /// Specifies the database connection for the Prisma Client.
@@ -37,7 +36,7 @@ model User {
   comments Comment[] //list of comment created by user
   likes    Like[] //post liked by the user
 
-  followes  Follows[] @relation("following") //list of user following current user
+  followers Follows[] @relation("following") //list of user following current user
   following Follows[] @relation("follower") //list of user followed by current user
 
   notifications        Notification[] @relation("userNotifications") //notification received by user
@@ -67,9 +66,9 @@ model Comment {
   createdAt DateTime @default(now())
 
   //Relation
-  author       User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  post         Post           @relation(fields: [postId], references: [id], onDelete: Cascade)
-  notification Notification[]
+  author        User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  post          Post           @relation(fields: [postId], references: [id], onDelete: Cascade)
+  notifications Notification[]
 
   @@index([authorId, postId]) //Composite index for faster queries
 }
