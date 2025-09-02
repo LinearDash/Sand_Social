@@ -1,7 +1,7 @@
 "use server"
 
 import prisma from "@/lib/prisma";
-import { getDbUserId } from "./user.actions"
+import { getDbUserId } from "./user.action"
 import { revalidatePath } from "next/cache";
 
 export async function createPost(content: string, imageUrl: string) {

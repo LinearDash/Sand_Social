@@ -2,7 +2,7 @@ import { currentUser } from "@clerk/nextjs/server"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
-import { getUserByClerkId } from "@/actions/user.actions";
+import { getUserByClerkId } from "@/actions/user.action";
 import { LinkIcon, MapPinIcon } from "lucide-react";
 
 import Link from "next/link";

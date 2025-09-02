@@ -1,4 +1,4 @@
-import { getRandomUsers } from "@/actions/user.actions"
+import { getRandomUsers } from "@/actions/user.action"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
